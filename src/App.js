@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Productos from './components/Productos';
 import './App.css';
 
 class App extends Component {
@@ -13,7 +14,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <p>Hola Mundo</p>
+        <Productos 
+        agregarCarro={() => console.log('Add Cart')}
+        productos={this.state.productos}
+        />
+       
       </div>
     )
   }
