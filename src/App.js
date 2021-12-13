@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    productos: [
+      { name: 'Tomate', price: 1500, img: '/productos/tomate.jpg' },
+      { name: 'Arbejas', price: 1200, img: '/productos/Arbejas.jpg' },
+      { name: 'Naranja', price: 1100, img: '/productos/naranja.jpg' },
+      { name: 'Lechuga', price: 1800, img: '/productos/lechuga.jpg' },
+    ]
+  }
+  render() {
+    return (
+      <div>
+        <p>Hola Mundo</p>
+      </div>
+    )
+  }
+
 }
 
 export default App;
