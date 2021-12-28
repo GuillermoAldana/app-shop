@@ -1,14 +1,30 @@
 import { Component } from "react";
 
+const styles = {
+    producto: {
+        border: 'solid 1px #eee',
+        boxShadow: '0 5px 5px rgb(0 ,0 ,0 ,0.1)',
+        width: '20%',
+        padding: '10px 15px',
+        borderRadius: '5px'
+    },
+    img: {
+        width: '100%'
+    }
+}
 class Producto extends Component {
 
     render(){
-        const { producto } = this.props 
+        const { producto, agregarCarrito } = this.props;
+
         return(
-            <div>
-               <img alt={producto.name} src={producto.img} width='150' />
+            <div style={styles.producto}>
+               <img alt={producto.name} src={producto.img} style={styles.img}/>
                <h3>{producto.name}</h3>
                <p>{producto.price}</p>
+               <button onClick={() => agregarCarrito(producto)}>
+                    Agregar al carrito
+               </button>
             </div>
         )
     }
