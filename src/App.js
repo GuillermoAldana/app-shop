@@ -1,7 +1,8 @@
 import { Component } from 'react';
-import Productos from './components/Productos';
-import Layout from './components/Layout';
-import Title from './components/Title';
+import Productos from './components/Producto/Productos';
+import Layout from './components/Layout/Layout';
+import Title from './components/Layout/Title';
+import NavBar from './components/Nav/NavBar';
 import './App.css';
 
 class App extends Component {
@@ -15,11 +16,12 @@ class App extends Component {
   render() {
     return (
       <div>
+        <NavBar />
         <Layout>
           <Title />
-          <Productos 
-          addCart={() => console.log('wait product')}
-          productos={this.state.productos}
+          <Productos
+            addCart={() => console.log('wait product')}
+            productos={this.state.productos}
           />
         </Layout>
       </div>

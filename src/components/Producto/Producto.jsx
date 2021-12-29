@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Button from './Button';
+import Button from '../Layout/Button';
 const styles = {
     producto: {
         border: 'solid 1px #eee',
