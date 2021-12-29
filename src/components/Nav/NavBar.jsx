@@ -1,6 +1,6 @@
 import { Component } from "react";
 import Logo from '../Layout/Logo';
-import Carrito from '../Layout/Carrito';
+import Carrito from '../Cart/Carrito';
 const styles = {
     navBar: {
         display: 'flex',
@@ -16,11 +16,14 @@ const styles = {
 class NavBar extends Component {
    
     render() { 
-        const {carrito} = this.props;
+        const {carrito, isCartActive, showCartList} = this.props;
         return(
             <nav style={styles.navBar}>
                 <Logo />
-                <Carrito carrito={carrito}/>
+                <Carrito 
+                carrito={carrito} 
+                isCartActive={isCartActive} 
+                showCartList={showCartList} />
             </nav>
         )
     }

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Productos from './components/Producto/Productos';
+import Productos from './components/Product/Productos';
 import Layout from './components/Layout/Layout';
 import Title from './components/Layout/Title';
 import NavBar from './components/Nav/NavBar';
@@ -13,6 +13,7 @@ class App extends Component {
       { name: 'Lechuga', price: 1800, img: '/productos/lechuga.jpg' },
     ],
     carrito: [],
+    isCartActive: false,
   }
   addCartList = (producto) => {
     const {carrito} = this.state;
@@ -34,10 +35,17 @@ class App extends Component {
     });
 
   }
+  showCartList = () => {
+    this.setState({isCartActive: !this.state.isCartActive})
+  }
   render() {
+    const { isCartActive } = this.state;
     return (
       <div>
-        <NavBar carrito={this.state.carrito}/>
+        <NavBar 
+        isCartActive={isCartActive}
+        carrito={this.state.carrito} 
+        showCartList={this.showCartList}/>
         <Layout>
           <Title />
           <Productos
