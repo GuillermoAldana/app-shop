@@ -11,10 +11,15 @@ const styles = {
     }
 }
 class BubbleAlert extends Component {
+    getNumberNotification(number) {
+        if(!number) {return ''};
+        return number > 9  ? '9+' : number;
+    }
     render(){
+        const {value} = this.props;
         return(
             <span style={styles.bubbleAlert}>
-                5
+                {this.getNumberNotification(value)}
             </span>
         )
     }

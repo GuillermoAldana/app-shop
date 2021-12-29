@@ -14,12 +14,13 @@ const styles = {
     }
 }
 class NavBar extends Component {
-
-    render() {
+   
+    render() { 
+        const {carrito} = this.props;
         return(
             <nav style={styles.navBar}>
                 <Logo />
-                <Carrito />
+                <Carrito carrito={carrito}/>
             </nav>
         )
     }
